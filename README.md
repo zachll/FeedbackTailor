@@ -1,3 +1,3 @@
 # Geoduck
 
-Geoduck is a prototype expert system that uses psychological theory to generate individually tailored performance feedback for healthcare providers.
+Geoduck is a message tailoring system that prioritizes and frames performance feedback for individual healthcare providers.
