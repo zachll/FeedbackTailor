@@ -9,4 +9,20 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-FeedbackTailor::Application.config.secret_key_base = 'c253f2658fec6404855a990c56a4c38fbac2f3f36ef6d24f4c82109ef5228da097bc74642ed2e8e7b45f66546a093e2392a4d98019e2908116ffcba3f86298b9'
+require 'securerandom'
+
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    # Use the existing token.
+    File.read(token_file).chomp
+  else
+    # Generate a new token and store it in token_file.
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end
+
+FeedbackTailor::Application.config.secret_key_base = secure_token
+
