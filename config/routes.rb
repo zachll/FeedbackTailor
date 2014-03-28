@@ -2,6 +2,7 @@ FeedbackTailor::Application.routes.draw do
   get "dashboard/home"
   get "dashboard/individual"
   get "dashboard/clinic"
+  get "dashboard/about"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

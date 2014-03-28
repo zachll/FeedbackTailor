@@ -7,4 +7,7 @@ class DashboardController < ApplicationController
 
   def clinic
   end
+ 
+  def about
+  end
 end
