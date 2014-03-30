@@ -8,9 +8,14 @@ describe "Dashboards" do
         expect(page).to have_content('your most relevant feedback')
     end
 
-    it "should have the title 'Home'" do
+    it "should have the title the base title" do
 	visit '/dashboard/home'
-	expect(page).to have_title("FeedbackTailor | Home")
+	expect(page).to have_title("FeedbackTailor")
+    end
+
+    it "should not have the custom title" do
+	visit '/dashboard/home'
+	expect(page).not_to have_title("| Home")
     end
   end
 

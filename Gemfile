@@ -2,7 +2,11 @@ source 'https://rubygems.org'
 ruby '2.1.1'
 #ruby-gemset=FeedbackTailor
 
-gem 'capybara', '2.2.1'
+group :test do
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'libnotify'
+end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.4'
@@ -33,12 +37,19 @@ gem 'jbuilder', '~> 1.2'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require:false
+  gem 'sdoc', require: false
 end
 
 group :development, :test do
-  gem 'rspec-rails',      ">= 2.0.0.beta"
+  gem 'rspec-rails'
+  gem 'guard-rspec'
 end
+
+group :production do
+  gem 'mysql'
+  gem 'rails_12factor'
+end
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
