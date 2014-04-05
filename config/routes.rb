@@ -1,4 +1,6 @@
 FeedbackTailor::Application.routes.draw do
+  get "static_pages/about"
+  get "static_pages/help"
   get "dashboard/home"
   get "dashboard/individual"
   get "dashboard/clinic"
