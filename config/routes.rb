@@ -1,11 +1,12 @@
 FeedbackTailor::Application.routes.draw do
-  get "static_pages/home"
-  get "static_pages/about"
-  get "static_pages/help"
-  get "dashboard/home"
-  get "dashboard/individual"
-  get "dashboard/clinic"
-  get "dashboard/about"
+  get "users/new"
+  root 'static_pages#home'
+  match '/help',	to: 'static_pages#help', via: 'get'
+  match '/about',	to: 'static_pages#about', via: 'get'
+  match '/individual', 	to: 'dashboard#individual', via: 'get'
+  match '/clinic', 	to: 'dashboard#clinic', via: 'get'
+  match '/generator', 	to: 'feedback_reports#generator', via: 'get'
+  match '/register', 	to: 'users#new', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

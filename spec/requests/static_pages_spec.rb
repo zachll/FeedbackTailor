@@ -1,60 +1,32 @@
 require 'spec_helper'
 
 describe "StaticPages" do
+
+  subject { page }
+
   describe "Home page" do
-    it "should have the content 'FeedbackTailor'" do
-      visit '/static_pages/home'
-      expect(page).to have_content('FeedbackTailor')
-    end
-
-    it "should have the content 'your most relevant'" do
-        visit '/static_pages/home'
-        expect(page).to have_content('your most relevant')
-    end
-
-    it "should have the title the base title" do
-        visit '/static_pages/home'
-        expect(page).to have_title("FeedbackTailor")
-    end
-
-    it "should not have the custom title" do
-        visit '/static_pages/home'
-        expect(page).not_to have_title("| Home")
-    end
+    before { visit root_path }
+ 
+    it { should have_content('FeedbackTailor')}
+    it { should have_title('FeedbackTailor')}
+    it { should have_content('your most relevant')}
+    it { should_not have_title('| Home')}
   end
-
-
-
-
 
 
   describe "About page" do
-    it "should have the content 'About FeedbackTailor'" do
-      visit '/static_pages/about'
-      expect(page).to have_content('About FeedbackTailor')
-    end
-
-    it "should have the content 'FeedbackTailor is'" do
-      visit '/static_pages/about'
-        expect(page).to have_content('FeedbackTailor is')
-    end
-
-    it "should have the title 'About'" do
-      visit '/static_pages/about'
-        expect(page).to have_title("FeedbackTailor | About")
-    end
-
-
-
-
+    before { visit about_path }
+    
+    it { should have_content('FeedbackTailor is')}
+    it { should have_content('About FeedbackTailor')}
+    it { should have_title('FeedbackTailor | About')}
   end
-
-
 
   describe "Help page" do
-    it "should have the content 'Help'" do
-      visit '/static_pages/help'
-      expect(page).to have_content('Help')
-    end
+    before { visit help_path }
+    
+    it { should have_content('Help')}
+    it { should have_title('FeedbackTailor | Help')}
   end
+
 end
