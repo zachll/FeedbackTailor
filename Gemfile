@@ -6,6 +6,7 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'libnotify'
+  gem 'factory_girl_rails', '4.2.1'
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

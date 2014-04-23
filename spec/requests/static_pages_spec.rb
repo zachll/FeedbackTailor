@@ -9,7 +9,7 @@ describe "StaticPages" do
  
     it { should have_content('FeedbackTailor')}
     it { should have_title('FeedbackTailor')}
-    it { should have_content('your most relevant')}
+    it { should have_content('performance feedback for healthcare providers')}
     it { should_not have_title('| Home')}
   end
 
