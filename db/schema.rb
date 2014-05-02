@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140423232943) do
+ActiveRecord::Schema.define(version: 20140502062744) do
 
   create_table "measures", primary_key: "measure_id", force: true do |t|
     t.string "name",        limit: 50, null: false
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20140423232943) do
     t.datetime "updated_at"
     t.string   "password_digest"
     t.string   "remember_token"
+    t.boolean  "admin",           default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
